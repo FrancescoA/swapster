@@ -1,1 +1,2 @@
 django-registration == 1.0
+Unipath == 1.0
