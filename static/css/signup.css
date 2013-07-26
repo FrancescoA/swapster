@@ -1,7 +1,19 @@
 div#form-container{
 	position: absolute;
-	top:0px;
-	left:0px;
+	top:50%;
+	left:40%;
 	z-index: 100;
-	
+}
+
+input {
+	font-size: 100px;
+}
+
+.well {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+form > button {
+	margin-top: 10px;
 }

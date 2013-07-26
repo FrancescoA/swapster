@@ -7,16 +7,29 @@
 {% endblock %}
 
 {% block content %} 
-<div id="form-container" class="row-fluid">
+<div id="form-container" class="well">
+<h3> Sign-Up! <h3>
 <form method="post" class ="home-signup">{% csrf_token %}
 	{% for field in form %}
-		<dl class="form">
-			<div> {{ field.errors }}</div>
-			<div> {{ field }} </div>
-		</dl>
+	
+		<div> {{ field.errors }}</div>
+		<div> {{ field }} </div>
+		
 	{% endfor%}
-    <button class="button primary button-block" type="submit">Sign up for free</button>
+    <button class="btn btn-primary btn-block btn-large" type="submit">Sign up for free</button>
 </form>
 </div>
 
 {% endblock%}
+
+{% block additional_js %}
+<script>
+
+$("#id_username").attr('placeholder', 'Username');
+$("#id_email").attr('placeholder', 'Email');
+$("#id_password1").attr('placeholder', 'Password');
+$("#id_password2").attr('placeholder', 'Password (Again)')
+
+</script>
+
+{% endblock %}
