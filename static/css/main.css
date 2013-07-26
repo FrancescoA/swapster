@@ -1,0 +1,40 @@
+img#logo {
+	width:30%;
+	height:auto;
+}
+
+a {
+	color:lightgrey;
+}
+
+a:hover{
+	color:white;
+}
+
+#landing-header h1{
+	font-size: 50px;
+	position: relative;
+	left:20px;
+}
+
+#landing-header{
+	background-color: #33CCFF;
+	border-color: #66FF99;
+	height: 70px;
+}
+
+div.footer-links{
+	text-align: center;
+	margin: 30px;
+
+}
+div.footer-links a {
+	margin: 10px;
+}
+
+#footer {
+	background-color: #19637C;
+	color: white;
+	height: 100%;
+	min-height: 100px;
+}

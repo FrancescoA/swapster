@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+
+{% block additional_css %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/signup.css" %}"/>
+{% endblock %}
+
+{% block content %} 
+<div id="form-container" class="row-fluid">
+<form method="post" class ="home-signup">{% csrf_token %}
+	{% for field in form %}
+		<dl class="form">
+			<div> {{ field.errors }}</div>
+			<div> {{ field }} </div>
+		</dl>
+	{% endfor%}
+    <button class="button primary button-block" type="submit">Sign up for free</button>
+</form>
+</div>
+
+{% endblock%}
