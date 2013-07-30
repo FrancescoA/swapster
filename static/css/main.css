@@ -32,6 +32,15 @@ div.footer-links a {
 	margin: 10px;
 }
 
+.messages {
+	width: 100%;
+}
+
+.floater{
+	position: absolute;
+	z-index: 100;
+}
+
 #footer {
 	background-color: #19637C;
 	color: white;

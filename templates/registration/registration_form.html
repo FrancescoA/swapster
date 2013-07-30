@@ -7,17 +7,30 @@
 {% endblock %}
 
 {% block content %} 
-<div id="form-container" class="well">
-<h3> Sign-Up! <h3>
-<form method="post" class ="home-signup">{% csrf_token %}
-	{% for field in form %}
+
+<div class="floater" id="forms-container">
+	<div class="well">
+		<h3>Login!</h3>
+		<form method="post" action="{% url 'trader.views.login' %}">
+		{% csrf_token %}
+		<input maxlength="254" name="username" type="text" placeholder="Username"/><br>
+		<input name="password" type="password" placeholder="Password"/><br>
+    	<input type="submit" value="Log in" />
+		</form>
+
+	</div>
+	<div class="well">	
+		<h3> Sign-Up! </h3>
+		<form method="post" class ="home-signup">{% csrf_token %}
+			{% for field in form %}
 	
-		<div> {{ field.errors }}</div>
-		<div> {{ field }} </div>
+			<div id="errors"> {{ field.errors }}</div>
+			<div> {{ field }} </div>
 		
-	{% endfor%}
-    <button class="btn btn-primary btn-block btn-large" type="submit">Sign up for free</button>
-</form>
+			{% endfor%}
+    		<button class="btn btn-primary btn-block btn-large" type="submit">Sign up for free</button>
+		</form>
+	</div>
 </div>
 
 {% endblock%}

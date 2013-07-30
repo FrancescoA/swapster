@@ -1,5 +1,6 @@
 {% extends 'skeleton.html' %}
 
+
 {% block body %}
 {% load static %}
 
@@ -9,8 +10,19 @@
 		<h1>Swapster | Where Trading Happens</h1>
 	</div>
 {% endblock %}
+{% if messages %}
+	<div class="messages floater">
+    	{% for message in messages %}
+    	<div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+    	<button type="button" class="close" data-dismiss="alert">&times;</button>
 
+    	{{ message }}
 
+    	</div>
+
+    	{% endfor %}
+	</div>
+{% endif %}
 {% block content %}
 
 	
