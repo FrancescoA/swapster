@@ -10,6 +10,9 @@
 		<h1>Swapster | Where Trading Happens</h1>
 	</div>
 {% endblock %}
+{% block additional_header %}
+
+{% endblock %}
 {% if messages %}
 	<div class="messages floater">
     	{% for message in messages %}
@@ -29,7 +32,10 @@
 
 
 {% endblock %}
+{% block background %}
 <img src="{% static "images/background.jpg" %}">
+
+{% endblock %}
 
 
 
