@@ -1,0 +1,10 @@
+.affix{
+	width: 100%;
+	top: 0px;	
+}
+
+.navbar {
+	border-radius: 0px;
+	margin-bottom: 0px;
+	background-color: #33CCFF;
+}

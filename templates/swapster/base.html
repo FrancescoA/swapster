@@ -1,1 +1,30 @@
 {% extends 'index.html' %}
+
+{% block additional_css %}
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}"/>
+{% endblock %}
+
+
+{% block additional_header %}
+<div class="navbar affix row">
+	<!--a class="navbar-brand" href="#">Swapster</a-->
+	<ul class="nav navbar-nav">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Traders</a></li>
+		<li><a href="#">Objects</a></li>
+		<li><a href="#">Requests</a></li>
+</div>
+
+
+{% endblock %}
+
+{% block background %}
+
+{% endblock %}
+
+
+{% block additional_js %}
+	<script src="{% static "js/base.js" %}"></script>
+
+{% endblock %}
