@@ -6,7 +6,7 @@
 
 
 {% block header %}
-	<div id="landing-header" class="row-fluid">
+	<div id="landing-header" class="row">
 		<h1>Swapster | Where Trading Happens</h1>
 	</div>
 {% endblock %}
@@ -33,8 +33,9 @@
 
 {% endblock %}
 {% block background %}
-<img src="{% static "images/background.jpg" %}">
-
+<div class="row">
+	<img class="img-responsive" src="{% static "images/background.jpg" %}">
+</div>
 {% endblock %}
 
 
@@ -45,7 +46,7 @@
 
 {% endblock %}
 <footer>
-	<div id="footer" class="row-fluid">
+	<div id="footer" class="row">
 		<div class="footer-links">
 			<a href="#">About US</a> |
 			<a href="#">Contact US</a> |
