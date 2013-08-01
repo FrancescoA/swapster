@@ -5,17 +5,24 @@
 {% block content %}
 <div class="row">
 	<div class="col-3">
+		{% if user.image %}
 		<img class="thumbnail" src="{{ user.image.url }}"/> 
-
+		{% else%}
+		<img class="thumbnail" src="">
+		{% endif %}
 
 
 	</div>
 	<div class="col-9">
 		<div class="row">
-rwrw
+			<h1> {{ user.store_title }} </h1>
+
 		</div>
 		<div class="row">
-rwerw
+			{{ user.object_set.all }}
+				<p> there is an object </p>
+			
+
 		</div>
 	</div>
 </div>
