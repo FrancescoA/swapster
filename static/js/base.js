@@ -4,4 +4,4 @@
       	return $("#landing-header").height();
       }
     }
-  })
+  });

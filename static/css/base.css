@@ -4,6 +4,9 @@
 }
 
 .navbar {
+	border-top: solid;
+	border-top-color: #19637C;
+	border-top-width: 1px;
 	border-radius: 0px;
 	margin-bottom: 0px;
 	background-color: #33CCFF;
