@@ -4,6 +4,4 @@ from trader.models import Trader
 from objects.models import Object
 
 def index(request):
-	items = Object.objects.filter(owner=request.user)
-	context = {'items' : items, 'object' : "hello"}
-	return render(request, 'swapster/profile.html', context)
+	return render(request, 'swapster/index.html')

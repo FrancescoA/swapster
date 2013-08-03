@@ -1,7 +1,9 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib import messages
+from objects.models import Object
+
 
 def login(request):
     print request.POST
@@ -14,7 +16,7 @@ def login(request):
         if user.is_active:
             auth_login(request, user)
             messages.add_message(request,messages.SUCCESS, 'You have successfully logged in!')
-            return render(request, "index.html")
+            return redirect('trader.views.profile')
             # Redirect to a success page.
         else:
             messages.add_message(request,message.INFO, 'Please activate your account before logging in.')
@@ -23,3 +25,9 @@ def login(request):
         messages.add_message(request, message.ERROR, 'That is an invalid username')
         # Return an 'invalid login' error message.
     return render(request,'registration_form.html')
+
+
+def profile(request):
+    items = Object.objects.filter(owner=request.user)
+    context = {'items' : items}
+    return render(request, 'trader/profile.html', context)

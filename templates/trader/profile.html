@@ -1,0 +1,41 @@
+{% extends 'swapster/base.html' %}
+
+
+
+{% block content %}
+<div class="row">
+	<div class="col-3">
+		{% if user.image %}
+		<img class="thumbnail" src="{{ user.image.url }}"/> 
+		{% else%}
+		<img class="thumbnail" src="">
+		{% endif %}
+
+	</div>
+	<div class="col-9">
+		<div class="row">
+			<h1> {{ user.store_title }} </h1>
+		</div>
+		<div class="row">
+			<div class="list-group">
+			{% for item in items %}
+				<div class="media list-group-item">
+					<a class="pull-left detail-trigger" name="{{ item|safe }}" owner="{{ item.owner.username }}">
+					<img class="media-object object-icon-medium" src="{{ item.image.url }}"/>
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">
+						{{ item.name }}
+						</h4>
+						{{ item.summary }}
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+{% endblock %}
