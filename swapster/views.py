@@ -4,4 +4,4 @@ from trader.models import Trader
 from objects.models import Object
 
 def index(request):
-	return render(request, 'swapster/index.html')
+	return render(request, 'index.html')

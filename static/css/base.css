@@ -2,6 +2,8 @@
 	width: 100%;
 	top: 0px;
 	z-index: 100;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 .navbar {
@@ -17,6 +19,10 @@
 .object-icon-medium {
 	width: 64px;
 	height: 64px;
+}
+
+#username {
+	margin-right: 40px;
 }
 
 .object-icon-small {

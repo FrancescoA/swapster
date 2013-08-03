@@ -24,33 +24,17 @@
     	{% endfor %}
 	</div>
 {% endif %}
-  <div class="modal fade" id="detail-view">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <img id="owner_thumb" src="" class="img-thumbnail object-icon-medium pull-left" alt="owner_thumb" />
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h1 class="modal-title">Modal title</h1>
-        </div>
-        <div class="modal-body">
-        	<p id="object-summary" class="lead"> </p>
-        	<img id="picture-full" class="img-rounded" src="">
-        	<h3> Description </h3>
-        	<p id="object-description"> </p>
-        </div>
-        <div class="modal-footer">
-          <a href="#" class="btn">Close</a>
-          <a href="#" class="btn btn-primary">I want it!</a>
-        </div>
-      </div>
-    </div>
-  </div>
+{% block common_content %}
+
+{% endblock %}
+<div id="content">
 {% block content %}
 
 	
 
 
 {% endblock %}
+</div>
 {% block background %}
 <div class="row">
 	<img class="img-responsive" src="{% static "images/background.jpg" %}">

@@ -16,11 +16,33 @@
 		<li><a href="#">Objects</a></li>
 		<li><a href="#">Requests</a></li>
 	</ul>
+	<p id="username" class="navbar-text pull-right"><a href="#" class="navbar-link">{{ user.username }}</a></p></li>
 </div>
 
-
 {% endblock %}
-
+{% block common_content %}
+  <div class="modal fade" id="detail-view">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img id="owner_thumb" src="" class="img-thumbnail object-icon-medium pull-left" alt="owner_thumb" />
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h1 class="modal-title">Modal title</h1>
+        </div>
+        <div class="modal-body">
+        	<p id="object-summary" class="lead"> </p>
+        	<img id="picture-full" class="img-rounded" src="">
+        	<h3> Description </h3>
+        	<p id="object-description"> </p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn" data-dismiss="modal">Close</a>
+          <a href="#" class="btn btn-primary">I want it!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
 {% block background %}
 
 {% endblock %}

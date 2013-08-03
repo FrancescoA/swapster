@@ -4,7 +4,6 @@ html,body {
 
 }
 
-
 img#logo {
 	width:30%;
 	height:auto;
@@ -16,6 +15,10 @@ a {
 
 a:hover{
 	color:white;
+}
+
+#content {
+  min-height: 500px;
 }
 
 #landing-header h1{
