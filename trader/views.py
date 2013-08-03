@@ -30,4 +30,10 @@ def login(request):
 def profile(request):
     items = Object.objects.filter(owner=request.user)
     context = {'items' : items}
-    return render(request, 'trader/profile.html', context)
+    return render(request, 'trader/user_profile.html', context)
+
+
+#def trader_profile(request):
+
+
+
