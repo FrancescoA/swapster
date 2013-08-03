@@ -2,9 +2,11 @@
 
 
 $(function(){
+	var obj_name;
+	var obj_owner;
 	$(".detail-trigger").click(function(handler){
-		var obj_name = this.getAttribute('name');
-		var obj_owner = this.getAttribute('owner');
+		obj_name = this.getAttribute('name');
+		obj_owner = this.getAttribute('owner');
 		//var path = window.location.pathname;
 		var path= "http://127.0.0.1:8000/objects/detail/";
 		console.log(obj_name);
@@ -18,21 +20,15 @@ $(function(){
 			var modal = $("#detail-view");
 			modal.modal();
 			var owner = responseObj['owner'];
+			var object = responseObj['object'];
 			//console.log(owner)
 			modal.find("#owner_thumb").attr('src', owner['imgURL']);
-
-
+			modal.find(".modal-title").html(obj_name);
+			modal.find('#picture-full').attr('src', object['imgURL']);
+			modal.find("#object-summary").html(object['summary']);
+			modal.find("#object-description").html(object['description']);
 
 			console.log(response);
-
 		});
-
-
-			
-
-
-
 	});
-
-
 });

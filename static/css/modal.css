@@ -1,4 +1,17 @@
-.modal-title {
-	
-	
+.modal-header h1 {
+	display: inline;
+	position: relative;
+	left:-18px;
+}
+
+.modal-header {
+	text-align: center;
+}
+
+#picture-full {
+	width: 400px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
