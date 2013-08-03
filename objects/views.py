@@ -7,6 +7,7 @@ from django.http import HttpResponse
 
 from objects.models import Object
 from trader.models import Trader
+from objects.forms import ObjectForm
 import json
 
 def index(request):
@@ -16,7 +17,9 @@ def index(request):
 
 class ObjectCreateView(CreateView):
     model = Object
+    form_class = ObjectForm
     template_name = 'objects/object_create.html'
+    #success_url = ''
 
 
 
