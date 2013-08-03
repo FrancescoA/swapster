@@ -1,6 +1,7 @@
 # Create your views here.
 from django.shortcuts import render,get_object_or_404
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 from django.utils import timezone
 from django.http import HttpResponse
 
@@ -10,6 +11,12 @@ import json
 
 def index(request):
 	return render(request, 'skeleton.html')
+
+
+
+class ObjectCreateView(CreateView):
+    model = Object
+    template_name = 'objects/object_create.html'
 
 
 
@@ -44,3 +51,6 @@ class ObjectDetailView(DetailView):
     	print response
 
     	return HttpResponse(json.dumps(response))
+
+
+

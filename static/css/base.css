@@ -16,6 +16,10 @@
 	z-index: 100;
 }
 
+.nav-container {
+	height: 51px;
+}
+
 .object-icon-medium {
 	width: 64px;
 	height: 64px;

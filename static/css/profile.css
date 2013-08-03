@@ -1,0 +1,8 @@
+button#add-object {
+	margin-left: 20px;
+	margin-bottom: 15px;
+}
+
+.row > .store-header {
+	display: inline-block;
+}
