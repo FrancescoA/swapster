@@ -1,5 +1,5 @@
 # Create your views here.
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.utils import timezone
@@ -19,7 +19,12 @@ class ObjectCreateView(CreateView):
     model = Object
     form_class = ObjectForm
     template_name = 'objects/object_create.html'
-    #success_url = ''
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.owner = self.request.user
+        obj.save()
+        return redirect('trader.views.profile')
 
 
 

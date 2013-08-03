@@ -2,7 +2,15 @@
 
 {% block profile_content %}
 
-{{ form.as_p }}
+	<form enctype="multipart/form-data" method="post" class ="creation-form">
+		{% csrf_token %}
+
+		{{ form.as_p }}
+    	<input class="btn btn-primary btn-block" type="submit" value="Save"/>
+	</form>
+
+
+	
 
 
 {% endblock %}
