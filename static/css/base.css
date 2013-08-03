@@ -2,8 +2,7 @@
 	width: 100%;
 	top: 0px;
 	z-index: 100;
-	margin-left: 0px;
-	margin-right: 0px;
+
 }
 
 .navbar {
@@ -18,6 +17,11 @@
 
 .nav-container {
 	height: 51px;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 .object-icon-medium {

@@ -3,6 +3,27 @@ button#add-object {
 	margin-bottom: 15px;
 }
 
+hr {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	margin-left: -15px;
+}
+
+.profile {
+	text-align: center;
+	padding-left: 0px;
+	width: auto;
+}
+
+.profile-pic {
+	min-height: 200px;
+	min-width: 200px;
+	max-height: 300px;
+	max-width: 300px;
+	height: auto;
+	width: auto;
+}
+
 .row > .store-header {
 	display: inline-block;
 }
