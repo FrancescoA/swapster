@@ -18,5 +18,6 @@ urlpatterns = patterns('',
     url(r'^$', 'swapster.views.index',),
     url(r'^accounts/',include('registration.backends.default.urls')),
     url(r'^traders/', include('trader.urls')),
+    url(r'^objects/', include('objects.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

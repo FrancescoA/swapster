@@ -14,3 +14,7 @@ class Object(models.Model):
 
 	def __unicode__(self):  # Python 3: def __str__(self):
 		return self.name
+
+	def date_createdToString(self):
+		format = "%m/%d/%Y" 
+		return self.date_created.strftime(format)

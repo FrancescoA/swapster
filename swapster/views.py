@@ -5,4 +5,5 @@ from objects.models import Object
 
 def index(request):
 	items = Object.objects.filter(owner=request.user)
-	return render(request, 'swapster/profile.html', {'items' : items})
+	context = {'items' : items, 'object' : "hello"}
+	return render(request, 'swapster/profile.html', context)
