@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^$', 'swapster.views.index',),
+    url(r'^$', 'swapster.views.index', name='index'),
     url(r'^accounts/',include('registration.backends.default.urls')),
     url(r'^traders/', include('trader.urls')),
     url(r'^objects/', include('objects.urls')),

@@ -17,6 +17,21 @@ a:hover{
 	color:white;
 }
 
+.jumbotron {
+    position: relative;
+    top: 30%;
+}
+
+.plain {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
+
+.plain:hover {
+    text-decoration: inherit;
+}
+
 #content {
   min-height: 600px;
 }

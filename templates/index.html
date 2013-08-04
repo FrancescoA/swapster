@@ -6,9 +6,11 @@
 
 
 {% block header %}
-	<div id="landing-header" class="row">
-		<h1>Swapster | Where Trading Happens</h1>
-	</div>
+	<a href="{% url 'index' %}" class="plain">
+		<div id="landing-header" class="row">
+			<h1>Swapster | Where Trading Happens</h1>
+		</div>
+	</a>
 {% endblock %}
 {% block additional_header %}
 
@@ -20,7 +22,6 @@
     	<button type="button" class="close" data-dismiss="alert">&times;</button>
     	{{ message }}
     	</div>
-
     	{% endfor %}
 	</div>
 {% endif %}
@@ -30,7 +31,12 @@
 <div id="content">
 {% block content %}
 
-	
+<div class="jumbotron floater">
+  <h1>Welcome to Swapster! Where Trading Happens! </h1>
+  <p> We make it easy and fun for you to trade with your friends online. </p>
+  <p><a href="/accounts/register" class="btn btn-primary btn-large">Sign Up!</a>
+  <a href="/accounts/register" class="btn btn-success btn-large">Login!</a></p>
+</div>
 
 
 {% endblock %}
