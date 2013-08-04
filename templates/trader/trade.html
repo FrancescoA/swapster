@@ -17,7 +17,9 @@
 						<h4 class="trade-header"> {{ user.username }}</h4>
 					</div>
 					{% for item in items %}
-					<img class="thumbnail object-icon-large stripped" src="{{ item.image.url }}"/>
+					<a class="draggable" name="{{ item|safe }}" owner="{{ item.owner.username }}">
+						<img class="thumbnail object-icon-large stripped" src="{{ item.image.url }}"/>
+					</a>
 					{% endfor %}
 				</div>
 				<div>
@@ -47,9 +49,11 @@
 		</div>
 	</div>
 
-
-
 </div>
+
+{% block additional_js2 %}
+	<script src="{% static 'js/trade.js' %}"></script>
+{% endblock %}
 
 
 {% endblock %}

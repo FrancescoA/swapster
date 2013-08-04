@@ -10,8 +10,6 @@
 	{% endblock %}
 {% endblock %}
 
-
-
 {% block additional_header %}
 <div class="row nav-container">
 <div class="navbar affix">
@@ -61,5 +59,8 @@
 {% block additional_js %}
 	<script src="{% static 'js/base.js' %}"></script>
 	<script src="{% static 'js/object_detail.js' %}"></script>
+	<script src="{% static 'js/jquery-ui-1.10.3.js' %}"></script>
+	{% block additional_js2 %}
 
+	{% endblock %}
 {% endblock %}

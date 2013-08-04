@@ -14,3 +14,7 @@
 h4.trade-header {
 	display: inline;
 }
+
+.draggrable {
+	cursor: pointer;
+}
