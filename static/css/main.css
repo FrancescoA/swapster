@@ -49,7 +49,7 @@ div.footer-links a {
 
 .floater{
 	position: absolute;
-	z-index: 100;
+	z-index: 5;
 }
 
 #footer {

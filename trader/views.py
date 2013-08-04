@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.views.generic.edit import UpdateView
 from django.http import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from objects.models import Object
@@ -19,21 +20,28 @@ def login(request):
         if user.is_active:
             auth_login(request, user)
             messages.add_message(request,messages.SUCCESS, 'You have successfully logged in!')
-            return redirect('trader.views.profile')
+            return redirect('user_profile')
             # Redirect to a success page.
         else:
-            messages.add_message(request,message.INFO, 'Please activate your account before logging in.')
+            messages.add_message(request,messages.INFO, 'Please activate your account before logging in.')
             # Return a 'disabled account' error message
     else:
-        messages.add_message(request, message.ERROR, 'That is an invalid username')
+        messages.add_message(request, messages.ERROR, 'That is an invalid username')
         # Return an 'invalid login' error message.
     return render(request,'registration_form.html')
 
 
-def profile(request):
-    items = Object.objects.filter(owner=request.user)
-    context = {'items' : items}
-    return render(request, 'trader/user_profile.html', context)
+def profile(request, username):
+    try:
+        user = Trader.objects.get(username=username)
+        items = Object.objects.filter(owner__username=username)
+        context = {'items' : items,
+        'user' : user }
+        return render(request, 'trader/profile.html', context)
+    except ObjectDoesNotExist:
+        messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
+        return redirect('user_profile')
+
 
 
 
