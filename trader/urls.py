@@ -16,5 +16,5 @@ urlpatterns = patterns('',
     url(r'^login/', 'trader.views.login',),
     url(r'^profile/', UpdateTraderView.as_view(), name='user_profile'),
     url(r'^(?P<username>\w+)/$', 'trader.views.profile', name='generic_profile'),
-    #url(r'^(?P<username>\w+)/trade/$', 'trader.views.trade', name='trade'),
+    url(r'^(?P<username>\w+)/trade/$', 'trader.views.tradeview', name='trade'),
 )

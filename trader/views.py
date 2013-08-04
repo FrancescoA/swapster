@@ -64,8 +64,23 @@ def profile(request, username):
 
 
 
+def tradeview(request,username):
+    try:
+        other_user = Trader.objects.get(username=username)
+        other_items = Object.objects.filter(owner__username=username)
+        user = request.user
+        items = Object.objects.filter(owner=user)
+        context = {
+            'other_user' : other_user,
+            'other_items' :other_items,
+            'user' : user,
+            'items' : items
+        }
+        return render(request, 'trader/trade.html', context)
 
-
+    except ObjectDoesNotExist: 
+        messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
+        return redirect('user_profile')
 
 
 class UpdateTraderView(UpdateView):
