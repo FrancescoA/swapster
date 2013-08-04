@@ -1,6 +1,4 @@
 
-
-
 $(function(){
 	var obj_name;
 	var obj_owner;
@@ -27,7 +25,6 @@ $(function(){
 			modal.find('#picture-full').attr('src', object['imgURL']);
 			modal.find("#object-summary").html(object['summary']);
 			modal.find("#object-description").html(object['description']);
-
 			console.log(response);
 		});
 	});

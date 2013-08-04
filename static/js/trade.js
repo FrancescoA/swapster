@@ -48,13 +48,17 @@ $(function(){
 		 //     to
 		// the inner html of "this" (the word). To check for correctness we just make sure that key == value
 		for(var i = 0 ; i < snappedTo.length ; i++){
-			snapmap[this.getAttribute('name')] = snappedTo[i].getAttribute('class')
+			snapmap[this.getAttribute('name')] = snappedTo[i].getAttribute('id')
 		}
+		console.log(snapmap);
 	}
 
-	function makeOffer(){
+	$("#offer").click(makeOffer)
 
-		
+	function makeOffer(){
+		var path = document.URL + "makeoffer";
+		$.post(path, snapmap);
+
 	}
 
 				

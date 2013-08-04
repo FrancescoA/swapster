@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^profile/', UpdateTraderView.as_view(), name='user_profile'),
     url(r'^(?P<username>\w+)/$', 'trader.views.profile', name='generic_profile'),
     url(r'^(?P<username>\w+)/trade/$', 'trader.views.tradeview', name='trade'),
+    url(r'^(?P<username>\w+)/trade/makeoffer/$'), 'trader.views.offer', name='makeoffer'),
 )

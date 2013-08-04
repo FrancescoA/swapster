@@ -82,6 +82,8 @@ def tradeview(request,username):
         messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
         return redirect('user_profile')
 
+def makeoffer(request,username):
+    
 
 class UpdateTraderView(UpdateView):
     model = Trader
