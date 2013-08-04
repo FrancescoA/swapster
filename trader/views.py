@@ -1,8 +1,11 @@
 from django.contrib.auth import authenticate, login as auth_login
+from django.views.generic.edit import UpdateView
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from objects.models import Object
+from trader.models import Trader
+from trader.forms import TraderForm
 
 
 def login(request):
@@ -32,6 +35,15 @@ def profile(request):
     context = {'items' : items}
     return render(request, 'trader/user_profile.html', context)
 
+
+
+class UpdateTraderView(UpdateView):
+    model = Trader
+    template_name = 'trader/edit_profile.html'
+    form_class = TraderForm
+
+    def get_object(self, queryset=None):
+        return self.request.user
 
 #def trader_profile(request):
 

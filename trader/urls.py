@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from trader.views import UpdateTraderView
 
 # Uncomment the next two lines to enable the admin:
 
@@ -14,4 +15,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^login/', 'trader.views.login',),
     url(r'^profile/','trader.views.profile'),
+    url(r'^edit/', UpdateTraderView.as_view())
 )

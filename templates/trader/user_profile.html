@@ -1,9 +1,11 @@
 {% extends 'trader/profile.html' %}
 
-
-
-{% block additional_store_header %}
-<a href="/objects/add"><button id="add-object" class="btn btn-success"> Add Object </button></a>
-
+{% block additional_profile %}
+<button class="btn btn-large btn-success btn-block">Edit</button>
 
 {% endblock %}
+
+{% block additional_store_header %}
+	<a href="/objects/add"><button id="add-object" class="btn btn-success"> Add Object </button></a>
+{% endblock %}
+
