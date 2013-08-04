@@ -32,14 +32,14 @@ def login(request):
     return render(request,'registration_form.html')
 
 
-
+'''
 class TraderDetailView(DetailView):
     model = Trader
     template_name = 'trader/profile.html'
 
     def get_context_data(self, **kwargs):
         context = super(TraderDetailView, self).get_context_data(**kwargs)
-        username = kwargs['username']
+        username = self.kwargs['username']
         try:
             user = Trader.objects.get(username=username)
             items = Object.objects.filter(owner__username=username)
@@ -49,7 +49,7 @@ class TraderDetailView(DetailView):
             messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
             return redirect('user_profile')
 
-
+'''
 
 def profile(request, username):
     try:
