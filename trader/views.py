@@ -39,11 +39,17 @@ def profile(request):
 
 class UpdateTraderView(UpdateView):
     model = Trader
-    template_name = 'trader/edit_profile.html'
+    template_name = 'trader/user_profile.html'
     form_class = TraderForm
 
     def get_object(self, queryset=None):
         return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super(UpdateTraderView, self).get_context_data(**kwargs)
+        items = Object.objects.filter(owner=self.request.user)
+        context['items'] = items
+        return context
 
 #def trader_profile(request):
 

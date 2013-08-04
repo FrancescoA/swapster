@@ -4,7 +4,7 @@ from trader.models import Trader
 class TraderForm(ModelForm):
 	class Meta:
 		model = Trader
-		fields = ('first_name', 'last_name', 'bio', 'store_title','image')
+		fields = ('image','first_name', 'last_name', 'bio', 'store_title')
 		widgets = {
 			'bio' : Textarea(attrs={'rows' : 4}),
 		}

@@ -7,11 +7,7 @@
 	<div class="col-3 profile">
 		<div class='well'>
 			<h2> {{ user.username }}</h2>
-			{% if user.image %}
-			<img class="profile-pic" src="{{ user.image.url }}"/>
-			{% else%}
-			<img class="profile-pic" src="http://s7.postimg.org/5q3jk5cm3/default.jpg">
-			{% endif %}
+			<img class="profile-pic" src="{{ user.image_url }}"/>
 			<h3> Description </h3>
 			<p> {{ user.bio }}</p>
 			<button class="btn btn-large btn-primary btn-block"> Trade </button>
