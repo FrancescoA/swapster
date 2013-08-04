@@ -33,7 +33,7 @@
 					</div>
 					{% for i in "12345678" %}
 						<div class="box thumbnail stripped">
-							<div class="snap1"></div>
+							<div id="{{ user.username }}" class="snap1"></div>
 						</div>
 					{% endfor %}
 				</div>
@@ -50,7 +50,7 @@
 					</div>
 					{% for i in "12345678" %}
 						<div class="box thumbnail stripped">
-							<div class="snap2"></div>
+							<div id="{{ other_user.username }}" class="snap2"></div>
 						</div>
 					{% endfor %}
 				</div>

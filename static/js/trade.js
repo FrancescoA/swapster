@@ -17,6 +17,7 @@ $(function(){
 		snap : ".snap1",
 		zIndex: 5,
 		snapMode: "inner",
+		stop: snapTrack,
 	}
 
 	$(".draggable1").draggable(dragoptions1)
@@ -36,7 +37,7 @@ $(function(){
 		/* Get the possible snap targets: */
 		var snapped = $(this).data('ui-draggable').snapElements;
 
-					/* Pull out only the snap targets that are "snapping": */
+		/* Pull out only the snap targets that are "snapping": */
 		var snappedTo = $.map(snapped, function(element) {
 			return element.snapping ? element.item : null;
 		});
@@ -47,11 +48,15 @@ $(function(){
 		 //     to
 		// the inner html of "this" (the word). To check for correctness we just make sure that key == value
 		for(var i = 0 ; i < snappedTo.length ; i++){
-			snapmap[snappedTo[i].id] = this.innerHTML;
+			snapmap[this.getAttribute('name')] = snappedTo[i].getAttribute('class')
 		}
-
-
 	}
+
+	function makeOffer(){
+
+		
+	}
+
 				
 
 
