@@ -41,6 +41,7 @@ class UpdateTraderView(UpdateView):
     model = Trader
     template_name = 'trader/user_profile.html'
     form_class = TraderForm
+    success_url = '/traders/profile'
 
     def get_object(self, queryset=None):
         return self.request.user
@@ -51,7 +52,6 @@ class UpdateTraderView(UpdateView):
         context['items'] = items
         return context
 
-#def trader_profile(request):
 
 
 

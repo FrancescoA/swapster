@@ -24,7 +24,7 @@ class ObjectCreateView(CreateView):
         obj = form.save(commit=False)
         obj.owner = self.request.user
         obj.save()
-        return redirect('trader.views.profile')
+        return redirect('/traders/profile')
 
 
 
