@@ -9,5 +9,9 @@ class Trader(AbstractUser):
 	image = models.ImageField(upload_to="traders/")
 	date_created = models.DateTimeField(auto_now=True)
 
-
+	def image_url(self):
+		if self.image:
+			return self.image.url
+		else:
+			return "http://s7.postimg.org/5q3jk5cm3/default.jpg"
 

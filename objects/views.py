@@ -46,7 +46,7 @@ class ObjectDetailView(DetailView):
     	response = {
     		'owner' : {
     			'name' : owner.username,
-    			'imgURL' : owner.image.url
+    			'imgURL' : owner.image_url()
     		},
     		'object' : {
     			'summary' : item.summary,

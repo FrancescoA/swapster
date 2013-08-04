@@ -12,25 +12,19 @@
 			{% else%}
 			<img class="profile-pic" src="http://s7.postimg.org/5q3jk5cm3/default.jpg">
 			{% endif %}
-			{% block editable_image %}
-
-			{% endblock %}
 			<h3> Description </h3>
-			{% block editable_description %}
 			<p> {{ user.bio }}</p>
-			{% endblock %}
 			<button class="btn btn-large btn-primary btn-block"> Trade </button>
 			{% block additional_profile %}
 
 			{% endblock %}
+
 		</div>
 
 	</div>
 	<div class="col-9">
 		<div class="row">
-			{% block editable_header %}
 			<h1 class="store-header">{{ user.store_title }} </h1>
-			{% endblock %}
 			{% block additional_store_header %}
 
 			{% endblock %}
