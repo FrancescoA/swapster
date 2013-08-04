@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.utils import timezone
 from django.http import HttpResponse
+from django.contrib import messages
 
 from objects.models import Object
 from trader.models import Trader
@@ -24,6 +25,7 @@ class ObjectCreateView(CreateView):
         obj = form.save(commit=False)
         obj.owner = self.request.user
         obj.save()
+        messages.add_message(self.request, messages.SUCCESS, "You have successfully added an object")
         return redirect('/traders/profile')
 
 

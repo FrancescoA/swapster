@@ -52,6 +52,12 @@ class UpdateTraderView(UpdateView):
         context['items'] = items
         return context
 
+    def form_valid(self, form):
+        obj = form.save()
+        obj.save()
+        messages.add_message(self.request, messages.INFO, "You have successfully edited your profile.")
+        return redirect(self.success_url)
+
 
 
 
