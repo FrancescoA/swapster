@@ -15,6 +15,21 @@ h4.trade-header {
 	display: inline;
 }
 
-.draggrable {
+.draggable {
 	cursor: pointer;
+	z-index: 100;
+}
+
+
+.full {
+	height: 100%;
+
+}
+
+.box {
+	height: 128px;
+	width: 128px;
+	border: solid;
+	border-width: 1px;
+
 }
