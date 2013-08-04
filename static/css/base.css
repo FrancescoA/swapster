@@ -29,6 +29,13 @@
 	height: 64px;
 }
 
+.object-icon-large {
+	width: 128px;
+	height: 128px;
+	display: inline-block;
+}
+
+
 #username {
 	margin-right: 40px;
 }

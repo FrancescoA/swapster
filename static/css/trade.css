@@ -1,0 +1,16 @@
+.border {
+	border: solid;
+	border-width: 1px;
+}
+
+.stripped {
+	padding: 0px;
+	margin: 0px;
+}
+
+.trade-header {
+	display: inline;
+}
+h4.trade-header {
+	display: inline;
+}

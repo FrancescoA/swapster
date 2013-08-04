@@ -12,7 +12,11 @@ hr {
 .profile {
 	text-align: center;
 	padding-left: 0px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 300px;
+	max-height: 90%;
+	overflow: auto;
 }
 
 .profile-pic {
