@@ -15,12 +15,12 @@ $(function(){
 	*/
 
 	var dragoptions = {
-		snap : ".snap",
+		snap : ".snap1",
 		zIndex: 5,
 		snapMode: "inner",
 	}
 
-	$(".draggable").draggable(dragoptions)
+	$(".draggable1").draggable(dragoptions)
 
 
 

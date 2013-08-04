@@ -15,7 +15,7 @@ h4.trade-header {
 	display: inline;
 }
 
-.draggable {
+.draggable1,.draggable2 {
 	cursor: pointer;
 	z-index: 5;
 }
@@ -26,9 +26,10 @@ h4.trade-header {
 
 }
 
-.snap {
+.snap1, .snap2 {
 	width: 128px;
 	height: 128px;
+	display: inline-block;
 }
 
 .box {
