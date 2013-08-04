@@ -15,8 +15,9 @@ $(function(){
 	*/
 
 	var dragoptions = {
-		snap : ".box",
-		zIndex: 100,
+		snap : ".snap",
+		zIndex: 5,
+		snapMode: "inner",
 	}
 
 	$(".draggable").draggable(dragoptions)
