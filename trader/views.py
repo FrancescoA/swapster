@@ -93,7 +93,7 @@ def profile(request, username):
         user = Trader.objects.get(username=username)
         items = Object.objects.filter(owner__username=username)
         context = {'items' : items,
-        'user' : user }
+        'auser' : user }
         return render(request, 'trader/profile.html', context)
     except ObjectDoesNotExist:
         messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
@@ -159,6 +159,7 @@ class UpdateTraderView(UpdateView):
         context = super(UpdateTraderView, self).get_context_data(**kwargs)
         items = Object.objects.filter(owner=self.request.user)
         context['items'] = items
+        context['auser'] = self.request.user
         return context
 
     def form_valid(self, form):

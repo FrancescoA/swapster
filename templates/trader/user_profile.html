@@ -6,12 +6,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h1 class="modal-title">{{ user.username }}</h1>
+          <h1 class="modal-title">{{ auser.username }}</h1>
         </div>
         <form enctype="multipart/form-data" method="post" class ="creation-form">
         	<div class="modal-body">
         		<div class="profile">
-        			<img class="profile-pic" src="{{ user.image_url }}"/>
+        			<img class="profile-pic" src="{{ auser.image_url }}"/>
         		</div>
 				{% csrf_token %}
 				{{ form.as_p }}				

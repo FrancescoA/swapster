@@ -6,19 +6,19 @@
 <div class="row">
 	<div class="col-3 profile">
 		<div class='well'>
-			<h2> {{ user.username }}</h2>
-			<img class="profile-pic" src="{{ user.image_url }}"/>
+			<h2> {{ auser.username }}</h2>
+			<img class="profile-pic" src="{{ auser.image_url }}"/>
 			<h3> Description </h3>
-			<p> {{ user.bio }}</p>
+			<p> {{ auser.bio }}</p>
 			{% block additional_profile %}
-			<a href={% url 'trade' user.username %} class="btn btn-large btn-primary btn-block"> Trade </a>
+			<a href={% url 'trade' auser.username %} class="btn btn-large btn-primary btn-block"> Trade </a>
 			{% endblock %}
 		</div>
 
 	</div>
 	<div class="col-9">
 		<div class="row">
-			<h1 class="store-header">{{ user.store_title }} </h1>
+			<h1 class="store-header">{{ auser.store_title }} </h1>
 			{% block additional_store_header %}
 
 			{% endblock %}

@@ -15,7 +15,9 @@
 			{% for offer in made_offers %}
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"> To: {{ offer.receiver.username }}</h3>
+					<a class="plain" href="{% url 'generic_profile' offer.receiver.username %}">
+						<h3 class="panel-title"> To: {{ offer.receiver.username }}</h3>
+					</a>
 					<a href="{% url 'decline_offer' offer.id %}" id="decline" class="btn btn-small btn-danger pull-right">Decline</a>
 				</div>
 				<div class='row'>
