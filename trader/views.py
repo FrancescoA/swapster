@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.views.generic.edit import UpdateView
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
@@ -33,6 +34,17 @@ def login(request):
         # Return an 'invalid login' error message.
     return render(request,'registration_form.html')
 
+
+
+class OfferListView(ListView):
+    model = Offer
+    template_name = 'trader/offers.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(OfferListView, self).get_context_data(**kwargs)   
+        offers = Offer.objects.filter(receiver=self.request.user)
+        context['offers'] = offers
+        return context
 
 '''
 class TraderDetailView(DetailView):
