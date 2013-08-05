@@ -2,6 +2,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 from django.utils import timezone
 from django.http import HttpResponse
 from django.contrib import messages
@@ -14,6 +15,12 @@ import json
 def index(request):
 	return render(request, 'skeleton.html')
 
+
+
+class ObjectListView(ListView):
+    model = Object
+    template_name = 'objects/objects.html'
+    context_object_name = 'objects'
 
 
 class ObjectCreateView(CreateView):
