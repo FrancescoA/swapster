@@ -23,7 +23,11 @@ hr {
 	margin-left: 10px;
 }
 
-a#accept {
+a#accept, a#decline {
 	margin-top: -4px;
 	display: inline;
+}
+
+a#accept {
+	margin-left: 5px;
 }
