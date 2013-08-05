@@ -31,13 +31,24 @@ class Offer(models.Model):
 	receiver_objects = models.ManyToManyField(Object, related_name='want')
 
 	def accept(self):
+		valid = True
 		for item in self.maker_objects.all():
-			item.owner = self.receiver
-			item.save()
-
+			if item.owner.username != self.maker.username: 
+				valid = False
 		for item in self.receiver_objects.all():
-			item.owner = self.maker
-			item.save()
+			if item.owner.username != self.receiver.username:
+				valid = False
+
+		if valid == False:
+			self.delete()
+			return
+
+		for item in self.maker_objects.all():
+				item.owner = self.receiver
+				item.save()
+		for item in self.receiver_objects.all():
+				item.owner = self.maker
+				item.save()
 		
 		self.delete()
 

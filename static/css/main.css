@@ -11,9 +11,10 @@ html,body {
   top: 30%;
   left: 25%;
   width: 50%;
+
 }
 
-img#logo {
+img[src]#logo {
 	width:30%;
 	height:auto;
 }
@@ -145,6 +146,7 @@ div.footer-links a {
 .form-control::-webkit-input-placeholder {
   color: #999999;
 }
+
 
 input,textarea {
   display: block;
