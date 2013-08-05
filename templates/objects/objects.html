@@ -11,7 +11,7 @@
 <hr> 
 <div class="row" id="object-content">
 {% for object in objects %}
-<div class="col-3">
+<div class="col-3 item">
     <div class="thumbnail profile">
     <h3>{{ object.name }}</h3>
     	<a class="detail-trigger" name="{{ object|safe }}" owner="{{ object.owner.username }}">
@@ -19,7 +19,7 @@
       	</a>
       <div class="caption">
         <p class="description"> {{ object.summary }}</p>
-        <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn btn-default">Action</a></p>
+        <p><a href="{% url 'trade' object.owner.username %}" class="btn btn-primary">I want it!</a></p>
       </div>
     </div>
 </div>

@@ -8,7 +8,7 @@ $(function() {
   		//columnWidth: 220,
   		gutter : 0,
   		isFitWidth : true,
-  		itemSelector: '.col-3'
+  		itemSelector: '.item'
 	});
 
 });
