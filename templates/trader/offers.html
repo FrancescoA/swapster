@@ -15,7 +15,7 @@
 			{% for offer in made_offers %}
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"> To: {{ offer.receiver.username }}
+					<h3 class="panel-title"> To: {{ offer.receiver.username }}</h3>
 				</div>
 				<div class='row'>
 					<div class='col-6'>
@@ -57,7 +57,8 @@
 			{% for offer in received_offers %}
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"> From: {{ offer.maker.username }}
+					<h3 class="panel-title"> From: {{ offer.maker.username }}</h3>
+					<a href="#" id="accept" class="btn btn-small btn-success pull-right">Accept</a>
 				</div>
 				<div class='row'>
 					<div class='col-6'>

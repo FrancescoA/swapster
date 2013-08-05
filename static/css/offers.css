@@ -7,7 +7,7 @@ hr {
 	border-top-color: rgb(185, 185, 185);
 }
 
-.object-icon-medium, h4, h5 {
+.object-icon-medium, h4, h5, h3 {
 	display: inline-block;
 }
 
@@ -21,4 +21,9 @@ hr {
 
 .object-label {
 	margin-left: 10px;
+}
+
+a#accept {
+	margin-top: -4px;
+	display: inline;
 }
