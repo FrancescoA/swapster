@@ -25,5 +25,13 @@ class Offer(models.Model):
 	maker_objects = models.ManyToManyField(Object, related_name='trade')
 	receiver_objects = models.ManyToManyField(Object, related_name='want')
 
-	#def accept(self):
+	def accept(self):
+		for item in self.maker_objects.all():
+			item.owner = self.receiver
+			item.save()
+		for item in self.receiver_objects.all():
+			item.owner = self.maker
+			item.save()
+			
+		self.delete()
 

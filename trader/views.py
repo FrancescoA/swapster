@@ -5,7 +5,7 @@ from django.views.generic.list import ListView
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from objects.models import Object
@@ -34,6 +34,12 @@ def login(request):
         # Return an 'invalid login' error message.
     return render(request,'registration_form.html')
 
+
+def accept_offer(request, offer_id):
+    offer = get_object_or_404(Offer,pk=offer_id)
+    offer.accept()
+    return redirect('offers')
+    
 
 
 class OfferListView(ListView):
