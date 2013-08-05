@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^$', 'swapster.views.index', name='index'),
     url(r'^accounts/',include('registration.backends.default.urls')),
+    url(r'^about/', 'swapster.views.about_us', name='about_us'),
+    url(r'^faq/', 'swapster.views.faq', name='faq'),
     url(r'^traders/', include('trader.urls')),
     url(r'^objects/', include('objects.urls')),
     url(r'^admin/', include(admin.site.urls)),

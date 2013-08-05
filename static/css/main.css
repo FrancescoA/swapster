@@ -4,6 +4,15 @@ html,body {
 
 }
 
+.super-center {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+}
+
 img#logo {
 	width:30%;
 	height:auto;

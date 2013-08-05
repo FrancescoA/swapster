@@ -5,3 +5,12 @@ from objects.models import Object
 
 def index(request):
 	return render(request, 'index.html')
+
+
+
+def about_us(request):
+	return render(request,'swapster/about_us.html')
+
+
+def faq(request):
+	return render(request, 'swapster/faq.html')
