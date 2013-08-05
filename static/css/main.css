@@ -17,6 +17,33 @@ a {
     margin-left: 18px;
 }
 
+.affix{
+  width: 100%;
+  top: 0px;
+  z-index: 100;
+
+}
+
+.navbar {
+  border-top: solid;
+  border-top-color: #19637C;
+  border-top-width: 1px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background-color: #33CCFF;
+  z-index: 100;
+}
+
+.stripped {
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-container {
+  height: 51px;
+}
+
+
 .center {
   margin-left: auto;
   margin-right: auto;

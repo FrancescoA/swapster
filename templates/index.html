@@ -13,7 +13,20 @@
 	</a>
 {% endblock %}
 {% block additional_header %}
-
+{% if user.is_authenticated %}
+<div class="row nav-container">
+<div class="navbar affix">
+	<!--a class="navbar-brand" href="#">Swapster</a-->
+	<ul class="nav navbar-nav">
+		<li><a href="{% url 'user_profile' %}">Home</a></li>
+		<li><a href="{% url 'traders' %}">Traders</a></li>
+		<li><a href="{% url 'objects' %}">Objects</a></li>
+		<li><a href="{% url 'offers' %}">Offers <span class="badge">{{ user.request_count }}</span></a></li>
+	</ul>
+	<p id="username" class="navbar-text pull-right"><a href="{% url 'logout' %}" class="navbar-link">Logout</a></p></li>
+</div>
+</div>
+{% endif %}
 {% endblock %}
 {% if messages %}
 	<div class="messages floater">
