@@ -58,8 +58,7 @@ $(function(){
 	function makeOffer(){
 		var path = document.URL + "makeoffer/";
 		$.post(path, snapmap, function(response){
-
-			
+			window.location = window.location.origin + response
 		});
 
 	}
