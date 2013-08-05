@@ -8,29 +8,32 @@
 {% block content %}
 	<div class="list-group">
 	{% for trader in traders %}
-	<a class="list-group-item" href="{% url 'generic_profile' trader.username %}">
+	<span class="list-group-item">
 		<div class="row">
-		<h4 class="list-group-item-heading"> {{ trader.username }} </h4>
+		<h4 class="username list-group-item-heading"> {{ trader.username }} </h4>
+		<a class="neutral" href="{% url 'generic_profile' trader.username %}">
 			<div class="list-group-item-text col-4">
 				<div class="row">
 					<div class="col-4">
 						<img class="object-icon-large img-rounded thumbnail" src="{{ trader.image_url }}" alt="user-profile"/>
-						
 					</div>
-					<div class="col-8">
+					<div class="col-8 list-group-item-text">
 						<h5> Description: </h5>
 						<p class="description"> {{ trader.bio }} </p>
 					</div>
 				</div>
 			</div>
+		</a>
 			<div class="list-group-item-text col-8">
 				<h5> Objects: </h5>
 				{% for item in trader.item_set %}
-					hello
+					<a class="detail-trigger" name="{{ item|safe }}" owner="{{ item.owner.username }}">
+						<img class="thumbnail object-icon-view stripped" src="{{ item.image.url }}"/>
+					</a>
 				{% endfor %}
 			</div>
 		</div>
-	</a>
+	</span>
 
 
 

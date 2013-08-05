@@ -7,3 +7,18 @@
 .col-8 > h5 {
 	margin-top: 0px;
 }
+
+
+a.neutral {
+	color: inherit;
+}
+
+.username {
+	margin-left: 16px;
+}
+
+img.object-icon-view {
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+}
