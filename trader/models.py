@@ -17,6 +17,8 @@ class Trader(AbstractUser):
 		else:
 			return "http://s7.postimg.org/5q3jk5cm3/default.jpg"
 
+	def request_count(self):
+		return Offer.objects.filter(receiver=self).count()
 
 class Offer(models.Model):
 	maker = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='made_offer')
