@@ -15,6 +15,11 @@
 	z-index: 100;
 }
 
+.stripped {
+	padding: 0px;
+	margin: 0px;
+}
+
 .nav-container {
 	height: 51px;
 }

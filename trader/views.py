@@ -42,8 +42,10 @@ class OfferListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(OfferListView, self).get_context_data(**kwargs)   
-        offers = Offer.objects.filter(receiver=self.request.user)
-        context['offers'] = offers
+        received_offers = Offer.objects.filter(receiver=self.request.user)
+        context['received_offers'] = received_offers
+        made_offers = Offer.objects.filter(maker=self.request.user)
+        context['made_offers'] = made_offers
         return context
 
 '''

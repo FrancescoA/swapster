@@ -1,1 +1,46 @@
 {% extends 'swapster/base.html' %}
+
+	
+	{% block additional_css2 %}
+		{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/offers.css" %}"/>
+	{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-6">
+		<div class="well">
+			<h1> Made Offers</h1>
+			<hr>
+			{% for offer in made_offers %}
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"> To: {{ offer.receiver.username }}
+				</div>
+				<div class='row'>
+					<div class='col-6'>
+						{% for obj in offer.maker_objects.all %}
+						<div> {{ obj.name }} </div>
+						{% endfor %}
+					</div>
+					<div class='col-6'>
+
+					</div>	
+				</div>
+
+			</div>
+
+			{% endfor %}
+
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="well">
+			<h1> Received Offers </h1>
+
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

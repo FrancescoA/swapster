@@ -1,0 +1,8 @@
+.col-6 > .well {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+hr {
+	border-top-color: rgb(185, 185, 185);
+}
