@@ -16,7 +16,7 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title"> To: {{ offer.receiver.username }}</h3>
-					<a href="" id="decline" class="btn btn-small btn-danger pull-right">Decline</a>
+					<a href="{% url 'decline_offer' offer.id %}" id="decline" class="btn btn-small btn-danger pull-right">Decline</a>
 				</div>
 				<div class='row'>
 					<div class='col-6'>
@@ -60,7 +60,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title"> From: {{ offer.maker.username }}</h3>
 					<a href="{% url 'accept_offer' offer.id %}" id="accept" class="btn btn-small btn-success pull-right">Accept</a>
-					<a href="#" id="decline" class="btn btn-small btn-danger pull-right">Decline</a>
+					<a href="{% url 'decline_offer' offer.id %}" id="decline" class="btn btn-small btn-danger pull-right">Decline</a>
 				</div>
 				<div class='row'>
 					<div class='col-6'>

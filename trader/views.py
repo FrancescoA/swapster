@@ -40,7 +40,10 @@ def accept_offer(request, offer_id):
     offer.accept()
     return redirect('offers')
     
-
+def decline_offer(request, offer_id):
+    offer = get_object_or_404(Offer, pk=offer_id)
+    offer.delete()
+    return redirect('offers')
 
 class OfferListView(ListView):
     model = Offer
