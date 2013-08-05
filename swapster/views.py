@@ -14,3 +14,7 @@ def about_us(request):
 
 def faq(request):
 	return render(request, 'swapster/faq.html')
+
+
+def contact_us(request):
+	return render(request, 'swapster/contact.html')
