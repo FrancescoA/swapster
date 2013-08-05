@@ -28,6 +28,12 @@ class ObjectCreateView(CreateView):
     form_class = ObjectForm
     template_name = 'objects/object_create.html'
 
+
+    def get_context_data(self, **kwargs):
+        context = super(ObjectCreateView, self).get_context_data(**kwargs)
+        context['auser'] = self.request.user
+        return context
+
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.owner = self.request.user
