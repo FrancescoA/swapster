@@ -31,6 +31,7 @@ class ObjectCreateView(CreateView):
 
 def delete_object(request, pk):
     item = get_object_or_404(Object, pk=pk)
+    messages.add_message(request, messages.INFO, "You successfully deleted your "+item.name)
     item.delete()
     return redirect('user_profile')
 
