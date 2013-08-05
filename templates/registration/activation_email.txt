@@ -1,0 +1,9 @@
+Welcome to Swapster!
+
+This is your activation key: {{ activation_key }}
+
+Go to this link to activate your account!
+
+http://127.0.0.1:8000/accounts/activate/{{ activation_key}}
+
+You have {{ expiration_days }} days left to activate your account before we delete it. 

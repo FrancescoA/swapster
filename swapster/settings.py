@@ -140,6 +140,29 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
+
+
+# Extra e-mail settings used to enable the use of GMAIL for registration #
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'propvocab@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'Propagate2013'
+
+EMAIL_PORT = 587
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+DEFAULT_DECK_NAME = "AllWords_"
+
+
+# End of extra settings for e-mail #
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
