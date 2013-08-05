@@ -56,8 +56,11 @@ $(function(){
 	$("#offer").click(makeOffer)
 
 	function makeOffer(){
-		var path = document.URL + "makeoffer";
-		$.post(path, snapmap);
+		var path = document.URL + "makeoffer/";
+		$.post(path, snapmap, function(response){
+
+			
+		});
 
 	}
 

@@ -2,11 +2,13 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.views.generic.edit import UpdateView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render,redirect
+from django.core.urlresolvers import reverse
 from django.contrib import messages
 from objects.models import Object
-from trader.models import Trader
+from trader.models import Trader, Offer
 from trader.forms import TraderForm
 
 
@@ -82,8 +84,32 @@ def tradeview(request,username):
         messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
         return redirect('user_profile')
 
+@csrf_exempt
 def makeoffer(request,username):
-    
+    try:
+        other_user = Trader.objects.get(username=username)
+        user = request.user
+        offer = Offer()
+        offer.maker = user
+        offer.receiver = other_user
+        offer.save()
+        if request.method == 'POST':
+            snapmap = request.POST
+            print len(snapmap)
+            for key in snapmap:
+                obj_set = Object.objects.filter(name=key)
+                if snapmap[key] == 'in':
+                    offer.receiver_objects.add(obj_set.filter(owner=other_user)[0])
+                if snapmap[key] == 'out':
+                    offer.maker_objects.add(obj_set.filter(owner=user)[0])
+            offer.save()
+            messages.add_message(request, messages.INFO, "Your offer has been sent")
+        return HttpResponse(reverse('user_profile'))
+
+    except ObjectDoesNotExist:
+        messages.add_message(request, messages.ERROR, "User "+username+ " does not exist")
+        return HttpResponse(reverse('user_profile'))
+            
 
 class UpdateTraderView(UpdateView):
     model = Trader
