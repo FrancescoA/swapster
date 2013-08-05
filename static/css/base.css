@@ -39,12 +39,22 @@
 	height: 50px;
 }
 
+.description {
+	overflow: auto;
+	max-height: 110px;
+}
+
+
 .object-icon-large {
 	width: 128px;
 	height: 128px;
 	display: inline-block;
 }
 
+.object-icon-extra-large {
+	width: 252px;
+	height: 252px;
+}
 
 #username {
 	margin-right: 40px;

@@ -1,3 +1,36 @@
 {% extends 'swapster/base.html' %}
 
 
+	{% block additional_css2 %}
+		{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/objects.css" %}"/>
+	{% endblock %}
+
+{% block content %}
+<h1 class="page-title"> All Objects! </h1>
+<hr> 
+<div class="row" id="object-content">
+{% for object in objects %}
+<div class="col-3">
+    <div class="thumbnail profile">
+    <h3>{{ object.name }}</h3>
+    	<a class="detail-trigger" name="{{ object|safe }}" owner="{{ object.owner.username }}">
+      		<img src="{{ object.image.url }}" class="img-rounded" id="object-view" alt="object">
+      	</a>
+      <div class="caption">
+        <p class="description"> {{ object.summary }}</p>
+        <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn btn-default">Action</a></p>
+      </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+	{% block additional_js2 %}
+	<script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+	<script src="{% static 'js/objects.js' %}"></script>
+	{% endblock %}
+
