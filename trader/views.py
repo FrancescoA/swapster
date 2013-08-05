@@ -33,8 +33,7 @@ def login(request):
     else:
         messages.add_message(request, messages.ERROR, 'That is an invalid username')
         # Return an 'invalid login' error message.
-    return render(request,'registration_form.html')
-
+    return redirect('/accounts/register')
 
 def logout_view(request):
     logout(request)
