@@ -19,12 +19,30 @@
 				</div>
 				<div class='row'>
 					<div class='col-6'>
-						{% for obj in offer.maker_objects.all %}
-						<div> {{ obj.name }} </div>
-						{% endfor %}
+						<h4> Your Items: </h4>
+						<div class="list-group">
+							{% for obj in offer.maker_objects.all %}
+							<div class="list-group-item">
+								<a class="detail-trigger" name="{{ obj|safe }}" owner="{{ obj.owner.username }}">
+								<img class="media-object img-rounded object-icon-medium" src="{{ obj.image.url }}"/>
+								</a>
+								<h4 class="object-label"> {{ obj.name }} </h4>
+							</div>
+							{% endfor %}
+						</div>
 					</div>
 					<div class='col-6'>
-
+						<h4> His/Her Items: </h4>
+						<div class="list-group">
+							{% for obj in offer.receiver_objects.all %}
+							<div class="list-group-item">
+								<a class="detail-trigger" name="{{ obj|safe }}" owner="{{ obj.owner.username }}">
+								<img class="media-object img-rounded object-icon" src="{{ obj.image.url }}"/>
+								</a>
+								<h4> {{ obj.name }} </h4>
+							</div>
+							{% endfor %}
+						</div>
 					</div>	
 				</div>
 

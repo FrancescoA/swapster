@@ -6,3 +6,19 @@
 hr {
 	border-top-color: rgb(185, 185, 185);
 }
+
+.object-icon-medium, h4, h5 {
+	display: inline-block;
+}
+
+.panel {
+	padding-bottom: 0px;
+}
+
+.panel-heading {
+	margin-bottom: 0px;
+}
+
+.object-label {
+	margin-left: 10px;
+}
