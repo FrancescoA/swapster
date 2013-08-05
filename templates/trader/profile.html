@@ -11,7 +11,7 @@
 			<h3> Description </h3>
 			<p> {{ user.bio }}</p>
 			{% block additional_profile %}
-			<button class="btn btn-large btn-primary btn-block"> Trade </button>
+			<a href={% url 'trade' user.username %} class="btn btn-large btn-primary btn-block"> Trade </a>
 			{% endblock %}
 		</div>
 
