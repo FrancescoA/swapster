@@ -3,6 +3,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
+from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.http import HttpResponse
 from django.contrib import messages
@@ -64,7 +65,8 @@ class ObjectDetailView(DetailView):
     	response = {
     		'owner' : {
     			'name' : owner.username,
-    			'imgURL' : owner.image_url()
+    			'imgURL' : owner.image_url(),
+
     		},
     		'object' : {
     			'summary' : item.summary,
@@ -73,7 +75,6 @@ class ObjectDetailView(DetailView):
     			'description' : item.description 
     		}
     	}
-
     	print response
 
     	return HttpResponse(json.dumps(response))

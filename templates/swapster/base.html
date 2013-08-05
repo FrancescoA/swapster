@@ -16,7 +16,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+          <a id="owner">
           <img id="owner_thumb" src="" class="img-thumbnail object-icon-medium pull-left" alt="owner_thumb" />
+          </a>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h1 class="modal-title">Modal title</h1>
         </div>
@@ -28,7 +30,7 @@
         </div>
         <div class="modal-footer">
           <a href="#" class="btn" data-dismiss="modal">Close</a>
-          <a href="{% url 'trade' user.username %}" class="btn btn-primary">I want it!</a>
+          <a id="want" href="" class="btn btn-primary">I want it!</a>
         </div>
       </div>
     </div>

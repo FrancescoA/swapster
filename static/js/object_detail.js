@@ -25,6 +25,8 @@ $(function(){
 			modal.find('#picture-full').attr('src', object['imgURL']);
 			modal.find("#object-summary").html(object['summary']);
 			modal.find("#object-description").html(object['description']);
+			modal.find("#owner").attr('href', "/traders/"+obj_owner);
+			modal.find("#want").attr('href', '/traders/'+obj_owner+"/trade");
 			console.log(response);
 		});
 	});
