@@ -37,24 +37,59 @@
 							{% for obj in offer.receiver_objects.all %}
 							<div class="list-group-item">
 								<a class="detail-trigger" name="{{ obj|safe }}" owner="{{ obj.owner.username }}">
-								<img class="media-object img-rounded object-icon" src="{{ obj.image.url }}"/>
+								<img class="media-object img-rounded object-icon-medium" src="{{ obj.image.url }}"/>
 								</a>
-								<h4> {{ obj.name }} </h4>
+								<h4 class="object-label"> {{ obj.name }} </h4>
 							</div>
 							{% endfor %}
 						</div>
 					</div>	
 				</div>
-
 			</div>
 
 			{% endfor %}
-
 		</div>
 	</div>
 	<div class="col-6">
 		<div class="well">
 			<h1> Received Offers </h1>
+			<hr>
+			{% for offer in received_offers %}
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"> From: {{ offer.maker.username }}
+				</div>
+				<div class='row'>
+					<div class='col-6'>
+						<h4> Your Items: </h4>
+						<div class="list-group">
+							{% for obj in offer.receiver_objects.all %}
+							<div class="list-group-item">
+								<a class="detail-trigger" name="{{ obj|safe }}" owner="{{ obj.owner.username }}">
+								<img class="media-object img-rounded object-icon-medium" src="{{ obj.image.url }}"/>
+								</a>
+								<h4 class="object-label"> {{ obj.name }} </h4>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class='col-6'>
+						<h4> His/Her Items: </h4>
+						<div class="list-group">
+							{% for obj in offer.maker_objects.all %}
+							<div class="list-group-item">
+								<a class="detail-trigger" name="{{ obj|safe }}" owner="{{ obj.owner.username }}">
+								<img class="media-object img-rounded object-icon-medium" src="{{ obj.image.url }}"/>
+								</a>
+								<h4 class="object-label"> {{ obj.name }} </h4>
+							</div>
+							{% endfor %}
+						</div>
+					</div>	
+				</div>
+			</div>
+
+			{% endfor %}
 
 		</div>
 	</div>
