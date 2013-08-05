@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from trader.views import UpdateTraderView,OfferListView
+from trader.views import UpdateTraderView,OfferListView,TraderListView
 
 # Uncomment the next two lines to enable the admin:
 
@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^login/$', 'trader.views.login',),
     url(r'^profile/$', UpdateTraderView.as_view(), name='user_profile'),
+    url(r'^all/$', TraderListView.as_view(), name='traders'),
     url(r'^offers/$', OfferListView.as_view(), name='offers'),
     url(r'^offers/accept/(?P<offer_id>\d+)/$', 'trader.views.accept_offer', name='accept_offer'),
     url(r'^offers/decline/(?P<offer_id>\d+)/$', 'trader.views.decline_offer', name='decline_offer'),

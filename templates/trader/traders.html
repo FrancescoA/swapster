@@ -1,1 +1,40 @@
-{% extends %}
+{% extends 'swapster/base.html' %}
+
+	{% block additional_css2 %}
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static "css/traders.css" %}"/>
+	{% endblock %}
+
+{% block content %}
+	<div class="list-group">
+	{% for trader in traders %}
+	<a class="list-group-item" href="{% url 'generic_profile' trader.username %}">
+		<div class="row">
+		<h4 class="list-group-item-heading"> {{ trader.username }} </h4>
+			<div class="list-group-item-text col-4">
+				<div class="row">
+					<div class="col-4">
+						<img class="object-icon-large img-rounded thumbnail" src="{{ trader.image_url }}" alt="user-profile"/>
+						
+					</div>
+					<div class="col-8">
+						<h5> Description: </h5>
+						<p class="description"> {{ trader.bio }} </p>
+					</div>
+				</div>
+			</div>
+			<div class="list-group-item-text col-8">
+				<h5> Objects: </h5>
+				{% for item in trader.item_set %}
+					hello
+				{% endfor %}
+			</div>
+		</div>
+	</a>
+
+
+
+	{% endfor %}
+	</div>
+
+{% endblock %}

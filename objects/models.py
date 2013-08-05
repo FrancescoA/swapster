@@ -5,7 +5,7 @@ from django.conf import settings
 
 
 class Object(models.Model):
-	owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="object")
+	owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="item")
 	name = models.CharField(max_length=30)
 	summary = models.CharField(max_length=500)
 	description = models.TextField(blank=True)

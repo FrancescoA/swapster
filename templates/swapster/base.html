@@ -16,7 +16,7 @@
 	<!--a class="navbar-brand" href="#">Swapster</a-->
 	<ul class="nav navbar-nav">
 		<li><a href="{% url 'user_profile' %}">Home</a></li>
-		<li><a href="#">Traders</a></li>
+		<li><a href="{% url 'traders' %}">Traders</a></li>
 		<li><a href="#">Objects</a></li>
 		<li><a href="{% url 'offers' %}">Offers <span class="badge">{{ user.request_count }}</span></a></li>
 	</ul>

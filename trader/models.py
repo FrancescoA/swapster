@@ -17,6 +17,9 @@ class Trader(AbstractUser):
 		else:
 			return "http://s7.postimg.org/5q3jk5cm3/default.jpg"
 
+	def item_set(self):
+		return Object.objects.filter(owner=self)
+
 	def request_count(self):
 		return Offer.objects.filter(receiver=self).count()
 

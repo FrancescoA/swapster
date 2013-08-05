@@ -45,6 +45,13 @@ def decline_offer(request, offer_id):
     offer.delete()
     return redirect('offers')
 
+
+class TraderListView(ListView):
+    model = Trader
+    template_name = 'trader/traders.html'
+    context_object_name = 'traders'
+
+
 class OfferListView(ListView):
     model = Offer
     template_name = 'trader/offers.html'

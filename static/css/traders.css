@@ -1,0 +1,9 @@
+.description {
+	overflow: auto;
+	max-height: 110px;
+}
+
+
+.col-8 > h5 {
+	margin-top: 0px;
+}
