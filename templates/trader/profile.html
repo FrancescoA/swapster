@@ -32,6 +32,8 @@
 					<a class="pull-left detail-trigger" name="{{ item|safe }}" owner="{{ item.owner.username }}">
 					<img class="media-object object-icon-medium" src="{{ item.image.url }}"/>
 					</a>
+					{% block delete_button %}
+					{% endblock %}
 					<div class="media-body">
 						<h4 class="media-heading">
 						{{ item.name }}

@@ -26,11 +26,13 @@ class ObjectCreateView(CreateView):
         obj.owner = self.request.user
         obj.save()
         messages.add_message(self.request, messages.SUCCESS, "You have successfully added an object")
-        return redirect('/traders/profile')
+        return redirect('user_profile')
 
 
-
-
+def delete_object(request, pk):
+    item = get_object_or_404(Object, pk=pk)
+    item.delete()
+    return redirect('user_profile')
 
 class ObjectDetailView(DetailView):
     model = Object

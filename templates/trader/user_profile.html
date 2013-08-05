@@ -34,3 +34,7 @@
 	<a href="/objects/add"><button id="add-object" class="btn btn-success"> Add Object </button></a>
 {% endblock %}
 
+{% block delete_button %}
+	<a href="{% url 'delete_object' item.id %}" class="btn btn-danger pull-right">Delete</a>
+{% endblock %}
+
