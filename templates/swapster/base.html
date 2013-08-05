@@ -20,7 +20,7 @@
 		<li><a href="{% url 'objects' %}">Objects</a></li>
 		<li><a href="{% url 'offers' %}">Offers <span class="badge">{{ user.request_count }}</span></a></li>
 	</ul>
-	<p id="username" class="navbar-text pull-right"><a href="#" class="navbar-link">Logout</a></p></li>
+	<p id="username" class="navbar-text pull-right"><a href="{% url 'logout' %}" class="navbar-link">Logout</a></p></li>
 </div>
 </div>
 {% endblock %}

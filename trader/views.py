@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render,redirect, get_object_or_404
 from django.core.urlresolvers import reverse
+from django.contrib.auth import logout
 from django.contrib import messages
 from objects.models import Object
 from trader.models import Trader, Offer
@@ -34,6 +35,10 @@ def login(request):
         # Return an 'invalid login' error message.
     return render(request,'registration_form.html')
 
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 def accept_offer(request, offer_id):
     offer = get_object_or_404(Offer,pk=offer_id)

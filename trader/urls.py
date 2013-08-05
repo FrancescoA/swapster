@@ -13,7 +13,8 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^login/$', 'trader.views.login',),
+    url(r'^login/$', 'trader.views.login'),
+    url(r'^logout/$', 'trader.views.logout_view', name='logout'),
     url(r'^profile/$', UpdateTraderView.as_view(), name='user_profile'),
     url(r'^all/$', TraderListView.as_view(), name='traders'),
     url(r'^offers/$', OfferListView.as_view(), name='offers'),
