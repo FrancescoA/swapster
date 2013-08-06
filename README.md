@@ -21,6 +21,7 @@ A Django project is divided into apps.
 Each app has it's own purpose is the grand scheme of the website, and theoretically it could be used without all the other apps (this is more of a convention thing).
 
 Each app will contain some files, which I will describe:
+
 urls.py:
 -The url settings of the app. It points a url ex: "/objects/all" to the correct view. 
 
@@ -31,7 +32,7 @@ models.py
 Where the database tables are defined. The 'models' are an object oriented way of defining a database table and work quite nicely. Essentially a model is a table, fields are columns, and various relationships can be established between models such as ManyToMany or ForeignKey. 
 
 Finally, as general advice, if you ever plan on installing Django, do so expecting to deploy. This means using a virtual environemnt. 
-Follow the instructions at http://tranquil-waters-5859.herokuapp.com/accounts/register/
+Follow the instructions at https://devcenter.heroku.com/articles/django
 
 With this I managed to install Django in 5 minutes. The first time I installed it it took me a day and half. 
 
